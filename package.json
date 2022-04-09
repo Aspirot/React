@@ -1,0 +1,29 @@
+{
+  "name": "react_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon ./src/control/BackEndController.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aspirot/React_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aspirot/React_Project/issues"
+  },
+  "homepage": "https://github.com/Aspirot/React_Project#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "config": "^3.3.7",
+    "express.js": "^1.0.0",
+    "mongoose": "^6.2.10",
+    "nodemon": "^2.0.15",
+    "validation": "^0.0.1"
+  }
+}
