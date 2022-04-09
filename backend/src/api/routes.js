@@ -13,8 +13,8 @@ app.use("/",router)
 taskDao.dbConnect();
 
 router.get('/', taskService.sendIndexFile)
-//router.get('/customers/:id', taskService.sendCustomerById)
-//router.get('/customers', taskService.sendAllCustomers)
+router.get('/tasks', taskService.sendAllTasks)
+router.get('/tasks/:id', taskService.sendTaskById)
 //router.post('/customers/addCustomer', taskService.postNewCustomer)
 
 const port = process.env.PORT || 8082;
