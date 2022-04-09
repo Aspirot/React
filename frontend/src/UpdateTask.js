@@ -21,6 +21,7 @@ export default function UpdateTask(){
         <div>
             <h1>Update a task</h1>
             {task && <TaskView selectedTask={task}/>}
+            {!task && <h3>There is no task with this id</h3>}
             <h5 onClick={() => {nav("/");}}>Go to home</h5>
         </div>
     )
