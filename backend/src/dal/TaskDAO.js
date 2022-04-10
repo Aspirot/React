@@ -20,8 +20,12 @@ async function findTasks(){
     return await Task.find({});
 }
 
-async function findTaskById(id){
+async function findTaskByObjectId(id){
     return await Task.findById(id).exec();
+}
+
+async function findTaskById(id){
+    return await Task.findOne({id:id});
 }
 
 async function findTaskByTitle(aTitle){
@@ -40,6 +44,7 @@ module.exports = {
     dbConnect:dbConnect,
     addTask:addTask,
     findTasks:findTasks,
+    findTaskByObjectId:findTaskByObjectId,
     findTaskById:findTaskById,
     findTaskByTitle:findTaskByTitle,
     deleteTaskById:deleteTaskById,

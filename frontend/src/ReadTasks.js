@@ -18,7 +18,7 @@ export default function ReadTasks(){
             <h1>Read tasks</h1>
             <ul>
                 {tasks.map(t => (
-                    <li key={t._id} onClick={() => {setSelectedTask(t)}} >{t.title}</li>
+                    <li key={t.id} onClick={() => {setSelectedTask(t)}} >{t.title}</li>
                 ))}
             </ul>
             <div>
@@ -26,8 +26,8 @@ export default function ReadTasks(){
                     {(selectedTask) 
                     ? <div>
                         <TaskView selectedTask={selectedTask}/>
-                        <h5 onClick={() => {nav(`/Tasks/Delete/${selectedTask._id}`)}}>Delete this task</h5>
-                        <h5 onClick={() => {nav(`/Tasks/Update/${selectedTask._id}`)}}>Update this task</h5>
+                        <h5 onClick={() => {nav(`/Tasks/Delete/${selectedTask.id}`)}}>Delete this task</h5>
+                        <h5 onClick={() => {nav(`/Tasks/Update/${selectedTask.id}`)}}>Update this task</h5>
                     </div>
                     
                     : <EmptyView/>}

@@ -11,6 +11,14 @@ async function sendAllTasks(req, res){
     res.send(tasks)
 }
 
+async function sendTaskByObjectId(req, res) {
+    res.set('Access-Control-Allow-Origin', '*');
+    let id = req.params.id;
+    var task = "";
+    task = await taskDao.findTaskByObjectId(id)
+    res.send(task)
+}
+
 async function sendTaskById(req, res) {
     res.set('Access-Control-Allow-Origin', '*');
     let id = req.params.id;

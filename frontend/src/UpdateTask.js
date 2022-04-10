@@ -9,9 +9,10 @@ export default function UpdateTask(){
     const [task, setTask] = useState();
 
     useEffect(() => { async function fetchTask(){
-        const baseURL = 'http://localhost:8082/tasks';
-        await axios.get(`${baseURL}/${taskId}`)
-        .then((resp) => setTask(resp.data))
+        if(!isNaN(taskId)){
+            const baseURL = 'http://localhost:8082/tasks';
+            await axios.get(`${baseURL}/${taskId}`)
+            .then((resp) => setTask(resp.data))}
      }
      fetchTask()
     })

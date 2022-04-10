@@ -9,9 +9,10 @@ export default function DeleteTask(){
     const [task, setTask] = useState();
 
     useEffect(() => { async function fetchTask(){
+        if(!isNaN(taskId)){
         const baseURL = 'http://localhost:8082/tasks';
         await axios.get(`${baseURL}/${taskId}`)
-        .then((resp) => setTask(resp.data))
+        .then((resp) => setTask(resp.data))}
      }
      fetchTask()
     })
@@ -21,6 +22,7 @@ export default function DeleteTask(){
         <div>
             <h1>Delete a task</h1>
             {task && <TaskView selectedTask={task}/>}
+            {!task && <h3>There is no task with this id</h3>}
             <h5 onClick={() => {nav("/");}}>Go to home</h5>
         </div>
     )
