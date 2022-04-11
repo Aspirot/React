@@ -5,14 +5,12 @@ async function sendIndexFile(req, res) {
 }
 
 async function sendAllTasks(req, res){
-    res.set('Access-Control-Allow-Origin', '*');
     var tasks = "";
     tasks = await taskDao.findTasks()
     res.send(tasks)
 }
 
 async function sendTaskByObjectId(req, res) {
-    res.set('Access-Control-Allow-Origin', '*');
     let id = req.params.id;
     var task = "";
     task = await taskDao.findTaskByObjectId(id)
@@ -20,7 +18,6 @@ async function sendTaskByObjectId(req, res) {
 }
 
 async function sendTaskById(req, res) {
-    res.set('Access-Control-Allow-Origin', '*');
     let id = req.params.id;
     var task = "";
     task = await taskDao.findTaskById(id)
