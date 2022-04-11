@@ -15,7 +15,7 @@ taskDao.dbConnect();
 router.get('/', taskService.sendIndexFile)
 router.get('/tasks', taskService.sendAllTasks)
 router.get('/tasks/:id', taskService.sendTaskById)
-//router.post('/customers/addCustomer', taskService.postNewCustomer)
+router.post('/tasks/addTask', taskService.postNewTask)
 
 const port = process.env.PORT || 8082;
 app.listen(port, () => console.log(`Server running on port ${port}`))
