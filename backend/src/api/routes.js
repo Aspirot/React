@@ -16,7 +16,7 @@ taskDao.dbConnect();
 
 router.get('/', taskService.sendIndexFile)
 router.get('/tasks', taskService.sendAllTasks)
-router.get('/tasks/:id', taskService.sendTaskById)
+router.get('/tasks/:id', taskService.sendTaskByObjectId)
 router.post('/tasks/addTask', taskService.postNewTask)
 router.delete('/tasks/deleteTask/:id', taskService.deleteTaskById)
 

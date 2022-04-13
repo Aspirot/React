@@ -21,7 +21,8 @@ async function findTasks(){
 }
 
 async function findTaskByObjectId(id){
-    return await Task.findById(id).exec();
+    if(mongoose.isValidObjectId(id))
+        return await Task.findById(id).exec();
 }
 
 async function findTaskById(id){
@@ -34,6 +35,10 @@ async function findTaskByTitle(aTitle){
 
 async function deleteTaskById(id){
     return await Task.deleteOne({id:id});
+}
+
+async function deleteTaskByObjectId(id){
+    return await Task.deleteOne({_id:id});
 }
 
 async function findAllByStatus(aStatus){
@@ -49,4 +54,5 @@ module.exports = {
     findTaskByTitle:findTaskByTitle,
     deleteTaskById:deleteTaskById,
     findAllByStatus:findAllByStatus,
+    deleteTaskByObjectId:deleteTaskByObjectId,
 };

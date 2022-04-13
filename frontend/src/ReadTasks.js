@@ -26,8 +26,8 @@ export default function ReadTasks(){
                     {(selectedTask) 
                     ? <div>
                         <TaskView selectedTask={selectedTask}/>
-                        <h5 onClick={() => {nav(`/Tasks/Delete/${selectedTask.id}`)}}>Delete this task</h5>
-                        <h5 onClick={() => {nav(`/Tasks/Update/${selectedTask.id}`)}}>Update this task</h5>
+                        <h5 onClick={() => {nav(`/Tasks/Delete/${selectedTask._id}`)}}>Delete this task</h5>
+                        <h5 onClick={() => {nav(`/Tasks/Update/${selectedTask._id}`)}}>Update this task</h5>
                     </div>
                     
                     : <EmptyView/>}

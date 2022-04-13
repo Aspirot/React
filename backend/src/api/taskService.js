@@ -34,7 +34,7 @@ async function postNewTask(req, res){
 async function deleteTaskById(req, res){
     let id = req.params.id;
     var deletedTask = "";
-    deleteTask = await taskDao.deleteTaskById(id);
+    deleteTask = await taskDao.deleteTaskByObjectId(id);
     res.send(deletedTask); 
 }
 
@@ -44,4 +44,5 @@ module.exports = {
     sendTaskById:sendTaskById,
     postNewTask:postNewTask,
     deleteTaskById:deleteTaskById,
+    sendTaskByObjectId:sendTaskByObjectId,
 }

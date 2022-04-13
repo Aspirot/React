@@ -10,7 +10,7 @@ export default function DeleteTask(){
     const [isDeleted, setIsDeleted] = useState(false);
 
     useEffect(() => { async function fetchTask(){
-        if(!isNaN(taskId)){
+        if(taskId){
         const baseURL = 'http://localhost:8082/tasks';
         await axios.get(`${baseURL}/${taskId}`)
         .then((resp) => setTask(resp.data))}
