@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
 export default function CreateTask(){
@@ -50,7 +50,7 @@ export default function CreateTask(){
             <br/>
             <button type="submit" onClick={submit}>Submit</button>
             {hasCreated && 
-            <h3>Task {title} has been created!</h3>}
+            <h3>Task has been created!</h3>}
         </div>
     )
 }
