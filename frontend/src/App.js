@@ -40,7 +40,7 @@ const Navigation = () => {
 }
 
 function Footer(){
-  return <div>This is the footer page</div>
+  return <div>A REACT project by Denis Aspirot and William Guilbault</div>
 }
 
 function ErrorPage(){

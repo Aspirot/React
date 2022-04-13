@@ -7,6 +7,7 @@ export default function DeleteTask(){
     let nav = useNavigate();
     let {taskId} = useParams();
     const [task, setTask] = useState();
+    const [isDeleted, setIsDeleted] = useState(false);
 
     useEffect(() => { async function fetchTask(){
         if(!isNaN(taskId)){
@@ -17,12 +18,25 @@ export default function DeleteTask(){
      fetchTask()
     })
 
+    async function deleteTask(){
+        const baseURL = 'http://localhost:/tasks/deleteTask';
+        await axios.delete(`${baseURL}/${taskId}`)
+        .then(() => {setIsDeleted(true); console.log(`${task} has been deleted!`)})
+        .catch((err) => console.log(err))
+    }
+    
 
     return(
         <div>
             <h1>Delete a task</h1>
-            {task && <TaskView selectedTask={task}/>}
-            {!task && <h3>There is no task with this id</h3>}
+            {task && !isDeleted &&
+            <div>
+                <TaskView selectedTask={task}/>
+                <button onClick={deleteTask}>Delete this task</button>
+            </div>
+            }
+            {!task && <h3>There is no task with {taskId} as an id or it is invalid</h3>}
+            {isDeleted && <h3>The task {taskId} has been successfully deleted</h3>}
             <h5 onClick={() => {nav("/");}}>Go to home</h5>
         </div>
     )
