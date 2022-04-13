@@ -45,6 +45,10 @@ async function findAllByStatus(aStatus){
     return await Task.find({status:aStatus})
 }
 
+async function updateTaskById(id,body){
+    return await Task.findByIdAndUpdate(id,{$set:body})
+}
+
 module.exports = {
     dbConnect:dbConnect,
     addTask:addTask,
@@ -55,4 +59,5 @@ module.exports = {
     deleteTaskById:deleteTaskById,
     findAllByStatus:findAllByStatus,
     deleteTaskByObjectId:deleteTaskByObjectId,
+    updateTaskById:updateTaskById,
 };

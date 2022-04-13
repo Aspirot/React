@@ -38,6 +38,14 @@ async function deleteTaskById(req, res){
     res.send(deletedTask); 
 }
 
+async function updateTaskById(req,res){
+    let id = req.params.id;
+    let body = req.body;
+    var updatedTask = "";
+    updatedTask = await taskDao.updateTaskById(id,body);
+    res.send(updatedTask);
+}
+
 module.exports = {
     sendIndexFile:sendIndexFile,
     sendAllTasks:sendAllTasks,
@@ -45,4 +53,5 @@ module.exports = {
     postNewTask:postNewTask,
     deleteTaskById:deleteTaskById,
     sendTaskByObjectId:sendTaskByObjectId,
+    updateTaskById:updateTaskById,
 }

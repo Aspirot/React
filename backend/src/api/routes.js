@@ -19,6 +19,7 @@ router.get('/tasks', taskService.sendAllTasks)
 router.get('/tasks/:id', taskService.sendTaskByObjectId)
 router.post('/tasks/addTask', taskService.postNewTask)
 router.delete('/tasks/deleteTask/:id', taskService.deleteTaskById)
+router.put('/tasks/updateTask/:id', taskService.updateTaskById)
 
 const port = process.env.PORT || 8082;
 app.listen(port, () => console.log(`Server running on port ${port}`))

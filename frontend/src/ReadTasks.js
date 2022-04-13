@@ -18,7 +18,7 @@ export default function ReadTasks(){
             <h1>Read tasks</h1>
             <ul>
                 {tasks.map(t => (
-                    <li key={t.id} onClick={() => {setSelectedTask(t)}} >{t.title}</li>
+                    <li key={t._id} onClick={() => {setSelectedTask(t)}} >{t.title}</li>
                 ))}
             </ul>
             <div>
