@@ -1,15 +1,17 @@
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 
 export default function CreateTask(){
+    let nav = useNavigate();
     const [title,setTitle] = useState('')
     const [description,setDescription] = useState('')
     const [status,setStatus] = useState("In Progress")
     const [hasCreated,setHasCreated] = useState(false)
     const statusOptions = ["In Progress","Completed"]
 
-    function submit(){
+    function create(){
         if(title && description && status)
             addTask()
         else
@@ -48,9 +50,10 @@ export default function CreateTask(){
                 </select>
             </label>
             <br/>
-            <button type="submit" onClick={submit}>Submit</button>
+            <button type="create" onClick={create}>Create</button>
             {hasCreated && 
             <h3>Task has been created!</h3>}
+            <h5 onClick={() => {nav("/");}}>Go to home</h5>
         </div>
     )
 }

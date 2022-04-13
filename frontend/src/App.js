@@ -27,7 +27,7 @@ const Navigation = () => {
   return(
       <nav style={{borderBottom: 'solid 1px', paddingBottom: '1rem'}}>
           <ul>
-              <li><Link to="/">Home</Link></li>
+              {/*<li><Link to="/">Home</Link></li>*/}
               <li><Link to="/Tasks">See all tasks</Link></li>
               <li><Link to="/Tasks/Create">Create a task</Link></li>
               {/*these will be accessed by going through ReadTasks
