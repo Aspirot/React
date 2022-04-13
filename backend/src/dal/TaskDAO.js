@@ -33,7 +33,7 @@ async function findTaskByTitle(aTitle){
 }
 
 async function deleteTaskById(id){
-    return await Task.deleteOne({_id:id});
+    return await Task.deleteOne({id:id});
 }
 
 async function findAllByStatus(aStatus){

@@ -19,7 +19,7 @@ export default function DeleteTask(){
     })
 
     async function deleteTask(){
-        const baseURL = 'http://localhost:/tasks/deleteTask';
+        const baseURL = 'http://localhost:8082/tasks/deleteTask';
         await axios.delete(`${baseURL}/${taskId}`)
         .then(() => {setIsDeleted(true); console.log(`${task} has been deleted!`)})
         .catch((err) => console.log(err))
@@ -35,7 +35,7 @@ export default function DeleteTask(){
                 <button onClick={deleteTask}>Delete this task</button>
             </div>
             }
-            {!task && <h3>There is no task with {taskId} as an id or it is invalid</h3>}
+            {!task && !isDeleted && <h3>There is no task with {taskId} as an id or it is invalid</h3>}
             {isDeleted && <h3>The task {taskId} has been successfully deleted</h3>}
             <h5 onClick={() => {nav("/");}}>Go to home</h5>
         </div>
