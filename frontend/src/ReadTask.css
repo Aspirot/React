@@ -1,0 +1,13 @@
+.read{
+    padding: 10px 20px;
+    text-align: center;
+    background: #49aa8d
+  }
+  .read li{
+    margin: 10px 0;
+    margin-left: 150px;
+    color: black;
+    font-weight: bold;
+    text-align: justify;
+    list-style-type: none;
+  }

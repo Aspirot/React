@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios  from "axios";
 import { useNavigate } from "react-router-dom"
 import TaskView from "./TaskView";
+import './ReadTask.css'
 
 export default function ReadTasks(){
     let nav = useNavigate();
@@ -14,7 +15,7 @@ export default function ReadTasks(){
      }, [])
 
     return(
-        <div>
+        <div className="read">
             <h1>Read tasks</h1>
             <ul>
                 {tasks.map(t => (

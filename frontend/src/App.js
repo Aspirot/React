@@ -1,14 +1,18 @@
 import {Link, Route, Routes, BrowserRouter as Router} from "react-router-dom"
+import React from "react";
 import CreateTask from './CreateTask';
 import DeleteTask from "./DeleteTask";
 import ReadTasks from "./ReadTasks";
 import UpdateTask from "./UpdateTask";
+import './Tasks.css'
 
 function App() {
   return (
-    <Router>
+    <div className="main">
+        <Router>
+          <Navigation/>
             <Routes>
-                <Route path={"/"} element={<Navigation/>}/>
+                <Route path={"/"} element={<Home/>}/>
                 <Route path={"/Tasks"} element={<ReadTasks/>}/>
                 <Route path={"/Tasks/Create"} element={<CreateTask/>}/>
                 <Route path={"/Tasks/Update/:taskId"} element={<UpdateTask/>}/>
@@ -20,12 +24,14 @@ function App() {
                 <Footer/>
             </div>
         </Router>
+    </div>
+    
   );
 }
 
 const Navigation = () => {
   return(
-      <nav style={{borderBottom: 'solid 1px', paddingBottom: '1rem'}}>
+      <nav className="navbar">
           <ul>
               {/*<li><Link to="/">Home</Link></li>*/}
               <li><Link to="/Tasks">See all tasks</Link></li>
@@ -37,6 +43,10 @@ const Navigation = () => {
           </ul>
       </nav>
   )
+}
+
+function Home(){
+  return <div>This is the home page</div>
 }
 
 function Footer(){
